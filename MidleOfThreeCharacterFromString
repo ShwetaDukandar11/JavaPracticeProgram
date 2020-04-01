@@ -1,0 +1,49 @@
+package StringProgram;
+
+import java.util.Scanner;
+
+public class AssignmentOne {
+
+	/**
+	Given a string of odd length, return the middle 3 characters from the string, 
+	so the string <b>"Monitor"</b> yields <b>"nit"</b>. 
+	If the string length is less than 3, return the string as is. <br> <br>
+
+	<b>EXPECTATIONS:</b><br>
+	middleThree("bunny") <b>---></b> "unn" <br>
+	middleThree("peter") <b>---></b> "ete" <br>
+	middleThree("Jamaica") <b>---></b>"mai" <br>
+	 */
+	
+	public static void main(String[] args) 
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter a string:");
+		String str=scan.next();
+		AssignmentOne ao=new AssignmentOne();
+		ao.middleOfThreeCharacter(str);
+		scan.close();
+	}
+	public void middleOfThreeCharacter(String str)
+	{
+		int length=str.length();
+		System.out.println("The given string length is:"+length);
+		if(length<=3)
+		{
+			System.out.println(str);
+		}
+		else if(length%2!=0)
+		{
+			int mid=length/2;
+			
+			String middlesOfThreeCharacter=str.substring(mid-1,mid+2);
+			System.out.println(middlesOfThreeCharacter);
+		}
+		else
+		{
+			System.out.println("String length is even number.");
+		}
+	}
+
+}
+
